@@ -1,4 +1,7 @@
-# ulbi
+Training project
+Vue.js
+
+[DEMO](https://shymba.github.io/training-project/)
 
 ## Project setup
 ```
