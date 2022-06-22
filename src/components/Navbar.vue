@@ -4,6 +4,8 @@
     <div class="navbar__btns">
       <MyButton @click="$router.push('/posts')">Posts Page</MyButton>
       <MyButton style="margin-left: 20px;" @click="$router.push('/about')">About Page</MyButton>
+      <MyButton style="margin-left: 20px;" @click="$router.push('/store')">Store</MyButton>
+      <MyButton style="margin-left: 20px;" @click="$router.push('/composition')">Composition API</MyButton>
     </div>
   </div>
 

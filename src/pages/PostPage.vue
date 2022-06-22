@@ -2,6 +2,7 @@
   <div>
     <h1>Posts</h1>
     <MyInput
+        v-focus
         v-model="searchQuery"
         placeholder="Search..."
     />
@@ -27,7 +28,8 @@
     <div v-else>
       <h3 style="color: forestgreen">Loading...</h3>
     </div>
-    <div ref="observer" class="observer"></div>
+<!--    <div ref="observer" class="observer"></div>-->
+    <div v-intersection="loadMorePosts" class="observer"></div>
     <!--    <div class="page__wrapper">-->
     <!--      <div-->
     <!--          v-for="pageNumber in totalPage"-->
@@ -120,17 +122,17 @@ export default {
   },
   mounted() {
     this.fetchPosts();
-    const options = {
-      rootMargin: '0px',
-      threshold: 1.0
-    }
-    const callback = (entries) => {
-      if(entries[0].isIntersecting && this.page < this.totalPage) {
-        this.loadMorePosts()
-      }
-    };
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.observer)
+    // const options = {
+    //   rootMargin: '0px',
+    //   threshold: 1.0
+    // }
+    // const callback = (entries) => {
+    //   if(entries[0].isIntersecting && this.page < this.totalPage) {
+    //     this.loadMorePosts()
+    //   }
+    // };
+    // const observer = new IntersectionObserver(callback, options);
+    // observer.observe(this.$refs.observer)
   },
   computed: {
     sortedPosts() {
